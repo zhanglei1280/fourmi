@@ -21,4 +21,22 @@ public class Fourmi
 		}
 
 	}
+
+
+
+
+	public static void main(String[] args)
+	{
+		System.println.out("hello");
+	}
+
+
+
+
+
+
+
+
+
+
 }
