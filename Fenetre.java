@@ -64,7 +64,7 @@ public class Fenetre extends Frame {
 		this.add(top_panel, BorderLayout.NORTH);
 
 		listArete.addActionListener(new listAreteListener(list_arete));
-		listDistance.addActionListener(new listDistanceListener(list_arete, list_distance));
+		listDistance.addActionListener(new listDistanceListener(list_distance));
 		mettre.addItemListener(new EcouteurMettre(mettre, this));
 		remettre.addActionListener(new RemettreListener(list_arete, list_distance, FC));
 		partir.addActionListener(new partirListener(list_arete, list_distance, this));

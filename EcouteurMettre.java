@@ -15,19 +15,9 @@ public class EcouteurMettre implements ItemListener {
 
 	@Override
 	public void itemStateChanged(ItemEvent arg0) {
-		// TODO Auto-generated method stub
-//		if (mettre.getState()) {
-//			System.out.println("mettre : " + mettre.getState());
-//
-//		}
-//
-//		else
-//			System.out.println("mettre : " + mettre.getState());
-//		mettre_point = mettre.getState();
-//		System.out.println("Checkbox : " + mettre.getState());
-//		System.out.println("mettre : " + f.isMettrePoint());
+
 		f.setMettrePoint(mettre.getState());
-//		System.out.println("mettre : " + f.isMettrePoint());
+
 	}
 
 }

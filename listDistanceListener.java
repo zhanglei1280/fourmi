@@ -3,11 +3,9 @@ import java.awt.event.ActionListener;
 
 public class listDistanceListener implements ActionListener {
 	
-	private listArete list_arete;
 	private listDistance list_distance;
 	
-	public listDistanceListener(listArete list_arete,listDistance list_distance) {
-		this.list_arete = list_arete;
+	public listDistanceListener(listDistance list_distance) {
 		this.list_distance = list_distance;
 	}
 

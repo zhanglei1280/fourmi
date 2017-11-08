@@ -30,8 +30,9 @@ public class listDistance {
 			epaisseur = 1.0;
 			for (int i = 1; i < list_Arete.obtenir_total(); i++) {
 
-				// test
+				// test------------------------------------------------
 				// System.out.println("calcule" + i + "-" + position);
+				//fin test---------------------------------------------
 
 				distance = calcule_distance(list_Arete.obtenir_p(i), list_Arete.obtenir_p(position));
 				list_distance.put(nom(i, position), new double[] { distance, epaisseur });
@@ -62,6 +63,7 @@ public class listDistance {
 		this.list_distance = new HashMap<String, double[]>();
 	}
 
+	// *C evapolation de
 	public void evaporer() {
 		Iterator<String> iterator = list_distance.keySet().iterator();
 		while (iterator.hasNext()) {
