@@ -57,6 +57,7 @@ public class test {
 //		 Col.go_fourmi();
 //		 Col.repartir();
 
+choisir_suivant;;;;
 	}
 
 }
