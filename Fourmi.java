@@ -61,11 +61,11 @@ public class Fourmi {
 				denominate += numerateur;
 				res[i] = numerateur;
 
-				// test
+				// test--------------------------------
 				// System.out.println("res[" + i + "]=" + QP + "/" +
 				// list_distance.distance(est_ou(), i) + "=" + res[i]);
 				// System.out.println("denominate = " + denominate);
-				// end test
+				// end test----------------------------
 			}
 		}
 		for (int i = 1; i < res.length; i++) {
@@ -75,13 +75,13 @@ public class Fourmi {
 				// denominate +"="+ (int)res[i] / denominate);
 				res[i] = ((int) (res[i] / denominate * 1000)) / 1000.0;
 
-				// test
+				// test------------------------
 				// System.out.println("res[" + i + "]=" + res[i]);
-				// end test
+				// end test--------------------
 			}
 		}
 
-		// test print list de la probabilité
+		// test print list de la probabilité--------------------------------------
 		// System.out.println("---List da la probabilité---");
 		// for (int i = 1; i < res.length; i++) {
 		// System.out.print("| " + i + " ");
@@ -95,7 +95,7 @@ public class Fourmi {
 		// System.out.print("|");
 		// }
 		// System.out.println("\n-------------End------------\n");
-		// end test
+		// end test--------------------------------------------------------------
 
 		return res;
 	}
@@ -107,16 +107,16 @@ public class Fourmi {
 			somme += list_pro[i];
 		}
 
-		// test
+		// test------------------------------------
 		// System.out.println("somme = " + somme);
-		// end test
+		// end test--------------------------------
 
 		// ici intervient l'aspect aléatoire
 		double random = (Math.random() * somme);
 
-		// test
+		// test------------------------------------
 		// System.out.println("random = " + random);
-		// end test
+		// end test--------------------------------
 
 		double tmp = 0;
 		int i;

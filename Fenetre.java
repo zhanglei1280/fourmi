@@ -42,12 +42,6 @@ public class Fenetre extends Frame {
 		// Fermer la fenêtre
 		this.addWindowListener(new WindowCloser(this));
 
-		// add(new Button("North"), BorderLayout.NORTH);
-		// add(new Button("South"), BorderLayout.SOUTH);
-		// add(new Button("East"), BorderLayout.EAST);
-		// add(new Button("West"), BorderLayout.WEST);
-		// add(new Button("Center"), BorderLayout.CENTER);
-
 		// Panel droite_panel = new Panel(new GridLayout(7, 1));
 		// Label label = new Label("Info de la colonie : ", Label.CENTER);
 		// Button colonie = new Button("Colonie");

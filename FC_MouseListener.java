@@ -7,14 +7,14 @@ public class FC_MouseListener implements MouseListener {
 	private listArete list_arete;
 	private Formi_Canvas FC;
 	private listDistance list_distance;
-	
+
 	private Fenetre f;
 
-	public FC_MouseListener(listArete list_arete, Formi_Canvas FC, listDistance list_distance,Fenetre f) {
+	public FC_MouseListener(listArete list_arete, Formi_Canvas FC, listDistance list_distance, Fenetre f) {
+
 		this.list_arete = list_arete;
 		this.FC = FC;
 		this.list_distance = list_distance;
-		
 		this.f = f;
 	}
 
@@ -30,9 +30,10 @@ public class FC_MouseListener implements MouseListener {
 			// distance
 			if (x > 10 && x < 810 && y > 10 && y < 810) {
 
-				// pour tester
+				// pour tester-----------
 				System.out.println("click : " + x + " , " + y);
-				int[] position = { x, y};
+				// fin tester------------
+				int[] position = { x, y };
 				list_arete.ajouter(position);
 
 				// calcule la distance
