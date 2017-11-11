@@ -1,5 +1,5 @@
 
-public class test {
+public class test_un_fourmi {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -37,7 +37,7 @@ public class test {
 //		 list_parcours[0] = new int[] {1,2};
 		 list_distance.evaporer();
 		 list_distance.toString();
-//		 list_distance.gestion(new int[][]{{1,2}});
+		 list_distance.gestion(new int[][]{{1,2}});
 		 list_distance.toString();
 		// f.march(f.choisir_suivant(f.pro_suivant()));
 		// f.print();
@@ -57,7 +57,7 @@ public class test {
 //		 Col.go_fourmi();
 //		 Col.repartir();
 
-choisir_suivant;;;;
+//choisir_suivant;
 	}
 
 }

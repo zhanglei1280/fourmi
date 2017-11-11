@@ -12,6 +12,9 @@ public class Fourmi {
 
 	private final int Q = 1;
 	private final double C = 0.7;
+	//C représente la quantité de phéromone évaporée 
+	//sur l'arête(i,j) durant le cycle nc.
+	
 
 	public Fourmi(int depart, listArete list_arete, listDistance list_distance) {
 
@@ -82,22 +85,27 @@ public class Fourmi {
 		}
 
 		// test print list de la probabilité--------------------------------------
-		// System.out.println("---List da la probabilité---");
-		// for (int i = 1; i < res.length; i++) {
-		// System.out.print("| " + i + " ");
-		// }
-		// System.out.print("|\n|");
-		// for (int i = 1; i < res.length; i++) {
-		// if (res[i] == 0)
-		// System.out.print(" - ");
-		// else
-		// System.out.printf("%.3f", res[i]);
-		// System.out.print("|");
-		// }
-		// System.out.println("\n-------------End------------\n");
+		print_pro(res);
 		// end test--------------------------------------------------------------
 
 		return res;
+	}
+	
+	//test écrire les probabilité 
+	public void print_pro(double[] res) {
+		System.out.println("---List da la probabilité---");
+		for (int i = 1; i < res.length; i++) {
+			System.out.print("| " + i + " ");
+		}
+		System.out.print("|\n|");
+		for (int i = 1; i < res.length; i++) {
+			if (res[i] == 0)
+				System.out.print(" - ");
+			else
+				System.out.printf("%.3f", res[i]);
+			System.out.print("|");
+		}
+		System.out.println("\n-------------End------------\n");
 	}
 
 	// choisir ville suivante

@@ -1,6 +1,7 @@
 
 public class Colonie {
 
+	//
 	private Fourmi[] listFourmi;
 	private int[][] list_parcours;
 
