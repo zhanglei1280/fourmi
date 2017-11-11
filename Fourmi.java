@@ -6,6 +6,7 @@ public class Fourmi {
 	private boolean[] arete_arrive;
 	// parcours de la fourmi
 	private int[] parcours;
+	private double distance;
 
 	private listArete list_arete;
 	private listDistance list_distance;
@@ -155,21 +156,25 @@ public class Fourmi {
 		return true;
 	}
 
-	public int[] parcours() {
+	public int[] obtenir_parcours() {
 		return parcours;
 	}
+	
+	public double obtenir_distrance() {
+		return distance;
+	}
+	
 
-	public double partir() {
-		double cycle = 0;
+	public void partir() {
+		distance = 0;
 		int p1,p2;
 //		int arete_suivant;
 		p1 = depart;
 		while (!parcours_complete()) {
 			p2 = choisir_suivant(pro_suivant());
 			march(p2);
-			cycle += list_distance.distance(p1,p2);
+			distance += list_distance.distance(p1,p2);
 		}
-		return ((int)(cycle*1000))/1000.0;
 	}
 
 	public void init_areteArrive() {
@@ -185,10 +190,9 @@ public class Fourmi {
 		}
 	}
 
-	public double repartir() {
+	public void repartir() {
 		init_areteArrive();
 		init_parcours();
-		return partir();
 	}
 
 	public void print() {

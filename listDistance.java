@@ -80,6 +80,7 @@ public class listDistance {
 				key = nom(i - 1, i);
 				TP = ((int) (Q / list_distance.get(key)[0]) * 1000) / 1000.0;
 				list_distance.get(key)[1] += TP;
+				
 			}
 		}
 	}
