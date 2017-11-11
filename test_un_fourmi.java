@@ -29,15 +29,14 @@ public class test_un_fourmi {
 		 list_arete.toString();
 		 list_distance.toString();
 
-//		 Fourmi f = new Fourmi(1,list_arete,list_distance);
-//		 f.print();
-//		 f.march(f.choisir_suivant(f.pro_suivant()));
-//		 f.print();
-//		 int[][] list_parcours = new int[0][1];
-//		 list_parcours[0] = new int[] {1,2};
+		 Fourmi f = new Fourmi(1,list_arete,list_distance);
+		 f.print();
+		 f.march(f.choisir_suivant(f.pro_suivant()));
+		 f.print();
+
 		 list_distance.evaporer();
 		 list_distance.toString();
-		 list_distance.gestion(new int[][]{{1,2}});
+
 		 list_distance.toString();
 		// f.march(f.choisir_suivant(f.pro_suivant()));
 		// f.print();

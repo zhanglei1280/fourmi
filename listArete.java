@@ -1,25 +1,25 @@
 import java.util.HashMap;
 import java.util.Iterator;
 
-public class listArete {
+public class listVille {
 
-	//une list des arete
-	//key : nom du arete
-	//value : position du arete
-	private HashMap<String, int[]> list_arete;
+	//une list des ville
+	//key : nom du ville
+	//value : position du ville
+	private HashMap<String, int[]> list_ville;
 	
-	//partie1 du nom d'arete
-	private final String nom_1 = "Arete";
-	//partie2 du nom d'arete = nombre total des aretes + 1
+	//partie1 du nom d'ville
+	private final String nom_1 = "Ville";
+	//partie2 du nom d'ville = nombre total des villes + 1
 	private int nom_2 = 1;
 	//un chaine de caractere qui est le nom suivant quand on ajouter un nouveau position
 	private String nom_suivant;
 
-	public listArete() {
-		list_arete = new HashMap<String, int[]>();
+	public listVille() {
+		list_ville = new HashMap<String, int[]>();
 	}
 
-	//regrouper un nouveau nom d'arete
+	//regrouper un nouveau nom d'ville
 	public void nom_suivant() {
 		nom_suivant = nom_1 + String.valueOf(nom_2++);
 	}
@@ -27,21 +27,21 @@ public class listArete {
 	//inserer un nouveau position
 	public void ajouter(int[] position) {
 		nom_suivant();
-		list_arete.put(nom_suivant, position);
+		list_ville.put(nom_suivant, position);
 
 	}
 
 	//obtenir le X de arete
 	public int obtenir_X(int position) {
-		return list_arete.get(nom_1 + String.valueOf(position))[0];
+		return list_ville.get(nom_1 + String.valueOf(position))[0];
 	}
 	//obtenir le Y de arete
 	public int obtenir_Y(int position) {
-		return list_arete.get(nom_1 + String.valueOf(position))[1];
+		return list_ville.get(nom_1 + String.valueOf(position))[1];
 	}
 	//obtenir le position de arete
 	public int[] obtenir_p(int position) {
-		return list_arete.get(nom_1 + String.valueOf(position));
+		return list_ville.get(nom_1 + String.valueOf(position));
 	}
 
 	//obtenir le nombre total d'arrret
@@ -51,7 +51,7 @@ public class listArete {
 	
 	//init le list
 	public void remettre() {
-		list_arete = new HashMap<String, int[]>();
+		list_ville = new HashMap<String, int[]>();
 		nom_2 = 1;
 	}
 
@@ -61,10 +61,10 @@ public class listArete {
 
 	public String toString() {
 		System.out.println("-----listArete-----");
-		Iterator<String> iterator = list_arete.keySet().iterator();
+		Iterator<String> iterator = list_ville.keySet().iterator();
 		while (iterator.hasNext()) {
 			String key = iterator.next();
-			System.out.println(key + " => " + print_position(list_arete.get(key)));
+			System.out.println(key + " => " + print_position(list_ville.get(key)));
 		}
 		System.out.println("--------END--------\n");
 		return null;

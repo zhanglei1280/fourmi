@@ -6,7 +6,7 @@ public class listDistance {
 	// String nom : Arete1 entre Arete2
 	// double[] : {distance , epaisseur}
 	private HashMap<String, double[]> list_distance;
-	private listArete list_Arete;
+	private listArete list_arete;
 	// private int nb_Arete;
 	// String nom;
 	double distance;
@@ -15,10 +15,10 @@ public class listDistance {
 	private final int Q = 1;
 	private final double C = 0.7;
 
-	public listDistance(listArete list_Arete) {
+	public listDistance(listArete list_arete) {
 
 		this.list_distance = new HashMap<String, double[]>();
-		this.list_Arete = list_Arete;
+		this.list_arete = list_arete;
 	}
 
 	public String nom(int p1, int p2) {
@@ -28,13 +28,13 @@ public class listDistance {
 	public void ajouter(int position) {
 		if (position > 1) {
 			epaisseur = 1.0;
-			for (int i = 1; i < list_Arete.obtenir_total(); i++) {
+			for (int i = 1; i < list_arete.obtenir_total(); i++) {
 
 				// test------------------------------------------------
 				// System.out.println("calcule" + i + "-" + position);
 				//fin test---------------------------------------------
 
-				distance = calcule_distance(list_Arete.obtenir_p(i), list_Arete.obtenir_p(position));
+				distance = calcule_distance(list_arete.obtenir_p(i), list_arete.obtenir_p(position));
 				list_distance.put(nom(i, position), new double[] { distance, epaisseur });
 			}
 		}
