@@ -10,10 +10,10 @@ public class listVille {
 	
 	//partie1 du nom d'ville
 	private final String nom_1 = "Ville";
-	//partie2 du nom d'ville = nombre total des villes + 1
-	private int nom_2 = 1;
+	//partie2 du nom d'ville = nombre total des villes
+	private int nom_2 = 0;
 	//un chaine de caractere qui est le nom suivant quand on ajouter un nouveau position
-	private String nom_suivant;
+	String nom_suivant;
 
 	public listVille() {
 		list_ville = new HashMap<String, int[]>();
@@ -21,7 +21,7 @@ public class listVille {
 
 	//regrouper un nouveau nom d'ville
 	public void nom_suivant() {
-		nom_suivant = nom_1 + String.valueOf(nom_2++);
+		nom_suivant = nom_1 + String.valueOf(++nom_2);
 	}
 
 	//inserer un nouveau position
@@ -32,27 +32,27 @@ public class listVille {
 	}
 
 	//obtenir le X de arete
-	public int obtenir_X(int position) {
-		return list_ville.get(nom_1 + String.valueOf(position))[0];
+	public int obtenir_X(int arete) {
+		return list_ville.get(nom_1 + String.valueOf(arete))[0];
 	}
 	//obtenir le Y de arete
-	public int obtenir_Y(int position) {
-		return list_ville.get(nom_1 + String.valueOf(position))[1];
+	public int obtenir_Y(int arete) {
+		return list_ville.get(nom_1 + String.valueOf(arete))[1];
 	}
 	//obtenir le position de arete
-	public int[] obtenir_p(int position) {
-		return list_ville.get(nom_1 + String.valueOf(position));
+	public int[] obtenir_p(int arete) {
+		return list_ville.get(nom_1 + String.valueOf(arete));
 	}
 
 	//obtenir le nombre total d'arrret
 	public int obtenir_total() {
-		return nom_2-1 ;
+		return nom_2 ;
 	}
 	
 	//init le list
 	public void remettre() {
 		list_ville = new HashMap<String, int[]>();
-		nom_2 = 1;
+		nom_2 = 0;
 	}
 
 	public String print_position(int[] position) {

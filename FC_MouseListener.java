@@ -3,16 +3,15 @@ import java.awt.event.MouseListener;
 
 public class FC_MouseListener implements MouseListener {
 
-	private int x, y;
-	private listArete list_arete;
+	int x, y;
+	private listVille list_ville;
 	private Formi_Canvas FC;
 	private listDistance list_distance;
 
 	private Fenetre f;
 
-	public FC_MouseListener(listArete list_arete, Formi_Canvas FC, listDistance list_distance, Fenetre f) {
-
-		this.list_arete = list_arete;
+	public FC_MouseListener(listVille list_ville, Formi_Canvas FC, listDistance list_distance,Fenetre f) {
+		this.list_ville = list_ville;
 		this.FC = FC;
 		this.list_distance = list_distance;
 		this.f = f;
@@ -29,15 +28,11 @@ public class FC_MouseListener implements MouseListener {
 			// if il est valable,on le ajoute dans la base de donnee,puis calcule la
 			// distance
 			if (x > 10 && x < 810 && y > 10 && y < 810) {
-
-				// pour tester-----------
-				System.out.println("click : " + x + " , " + y);
-				// fin tester------------
 				int[] position = { x, y };
-				list_arete.ajouter(position);
+				list_ville.ajouter(position);
 
 				// calcule la distance
-				list_distance.ajouter(list_arete.obtenir_total());
+				list_distance.ajouter(list_ville.obtenir_total());
 			}
 
 			FC.repaint();

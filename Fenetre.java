@@ -24,10 +24,9 @@ public class Fenetre extends Frame {
 
 	public Fenetre() {
 
-		listArete list_arete = new listArete();
-		listDistance list_distance = new listDistance(list_arete);
+		listVille list_ville = new listVille();
+		listDistance list_distance = new listDistance(list_ville);
 		
-
 		this.setTitle("Fourmi");
 		this.setSize(Largeur, Hauteur);
 		this.setBackground(new Color(250, 227, 113));
@@ -35,19 +34,12 @@ public class Fenetre extends Frame {
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
 
-		Formi_Canvas FC = new Formi_Canvas(list_arete);
+		Formi_Canvas FC = new Formi_Canvas(list_ville);
 		this.add(FC, BorderLayout.CENTER);
 		setVisible(true);
 
 		// Fermer la fenêtre
 		this.addWindowListener(new WindowCloser(this));
-
-		// Panel droite_panel = new Panel(new GridLayout(7, 1));
-		// Label label = new Label("Info de la colonie : ", Label.CENTER);
-		// Button colonie = new Button("Colonie");
-		// droite_panel.add(label);
-		// droite_panel.add(colonie);
-		// this.add(droite_panel, BorderLayout.EAST);
 
 		Panel top_panel = new Panel(new FlowLayout(FlowLayout.CENTER));
 		Button listArete = new Button("listArete");
@@ -63,13 +55,13 @@ public class Fenetre extends Frame {
 		top_panel.add(partir);
 		this.add(top_panel, BorderLayout.NORTH);
 
-		listArete.addActionListener(new listAreteListener(list_arete));
-		listDistance.addActionListener(new listDistanceListener(list_distance));
+		listArete.addActionListener(new listVilleListener(list_ville));
+		listDistance.addActionListener(new listDistanceListener(list_ville, list_distance));
 		mettre.addItemListener(new EcouteurMettre(mettre, this));
-		remettre.addActionListener(new RemettreListener(list_arete, list_distance, FC));
-		partir.addActionListener(new partirListener(list_arete, list_distance, this));
+		remettre.addActionListener(new RemettreListener(list_ville, list_distance, FC));
+		partir.addActionListener(new partirListener(list_ville, list_distance, this));
 
-		FC.addMouseListener(new FC_MouseListener(list_arete, FC, list_distance, this));
+		FC.addMouseListener(new FC_MouseListener(list_ville, FC, list_distance, this));
 
 	}
 

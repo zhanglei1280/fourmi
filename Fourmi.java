@@ -1,5 +1,3 @@
-import java.util.Random;
-
 public class Fourmi {
 
 	private int depart;
@@ -8,7 +6,7 @@ public class Fourmi {
 	private int[] parcours;
 	private double distance;
 
-	private listArete list_arete;
+	private listVille list_ville;
 	private listDistance list_distance;
 
 	private final int Q = 1;
@@ -17,23 +15,21 @@ public class Fourmi {
 	//sur l'arête(i,j) durant le cycle nc.
 	
 
-	public Fourmi(int depart, listArete list_arete, listDistance list_distance) {
+	public Fourmi(int depart, listVille list_ville, listDistance list_distance) {
 
-		this.list_arete = list_arete;
+		this.list_ville = list_ville;
 		this.list_distance = list_distance;
 
 		this.depart = depart;
-		this.arete_arrive = new boolean[list_arete.obtenir_total() + 1];
+		this.arete_arrive = new boolean[list_ville.obtenir_total() + 1];
 		arete_arrive[depart] = true;
-		this.parcours = new int[list_arete.obtenir_total() + 1];
+		this.parcours = new int[list_ville.obtenir_total() + 1];
 		parcours[1] = depart;
 
 	}
 
-	public double TP(int p1, int p2) {
-		int arete1 = p1 < p2 ? p1 : p2;
-		int arete2 = p1 > p2 ? p1 : p2;
-		double distance = list_distance.distance(arete1, arete2);
+	public double TP(int v1, int v2) {
+		double distance = list_distance.distance(v1, v2);
 		return ((int) (Q / distance * 1000)) / 1000.0;
 	}
 
@@ -64,30 +60,13 @@ public class Fourmi {
 				numerateur = QP / list_distance.distance(est_ou(), i);
 				denominate += numerateur;
 				res[i] = numerateur;
-
-				// test--------------------------------
-				// System.out.println("res[" + i + "]=" + QP + "/" +
-				// list_distance.distance(est_ou(), i) + "=" + res[i]);
-				// System.out.println("denominate = " + denominate);
-				// end test----------------------------
 			}
 		}
 		for (int i = 1; i < res.length; i++) {
 			if (arete_arrive[i] == false) {
-				// System.out.println("res[" + i + "]=" + res[i]);
-				// System.out.println("res[" + i + "]/denominate" + "=" + res[i]+"/" +
-				// denominate +"="+ (int)res[i] / denominate);
 				res[i] = ((int) (res[i] / denominate * 1000)) / 1000.0;
-
-				// test------------------------
-				// System.out.println("res[" + i + "]=" + res[i]);
-				// end test--------------------
 			}
 		}
-
-		// test print list de la probabilité--------------------------------------
-		print_pro(res);
-		// end test--------------------------------------------------------------
 
 		return res;
 	}
@@ -116,16 +95,8 @@ public class Fourmi {
 			somme += list_pro[i];
 		}
 
-		// test------------------------------------
-		// System.out.println("somme = " + somme);
-		// end test--------------------------------
-
 		// ici intervient l'aspect aléatoire
 		double random = (Math.random() * somme);
-
-		// test------------------------------------
-		// System.out.println("random = " + random);
-		// end test--------------------------------
 
 		double tmp = 0;
 		int i;
@@ -168,7 +139,7 @@ public class Fourmi {
 	public void partir() {
 		distance = 0;
 		int p1,p2;
-//		int arete_suivant;
+
 		p1 = depart;
 		while (!parcours_complete()) {
 			p2 = choisir_suivant(pro_suivant());
@@ -198,10 +169,6 @@ public class Fourmi {
 	public void print() {
 
 		System.out.println("--------Fourmi--------");
-//		 System.out.println("Arete arrivée : ");
-//		 for (int i = 1; i < arete_arrive.length; i++) {
-//		 System.out.println("Arete" + i + " : " + arete_arrive[i]);
-//		 }
 		System.out.print("Parcours : ");
 		for (int i = 1; i < parcours.length; i++) {
 			if (!(parcours[i] == 0)) {
